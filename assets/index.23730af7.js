@@ -1,0 +1,1 @@
+import{m as s}from"./index.658b6b9b.js";const a=(t,r)=>{const e=t.__vccOpts||t;for(const[n,o]of r)e[n]=o;return e};const u=s("myStore",{state:()=>({curObject:{id:"",name:""},unreadContent:[]}),getters:{},actions:{setCurObject(t){this.curObject=t},setUnreadContent(t){this.unreadContent=t}}});export{a as _,u};
