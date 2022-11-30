@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                position: relative;
+            }
+            iframe {
+                width: 100vw;
+                height: 100vh;
+            }
+            img {
+                width: 80vw;
+                height: 80vw;
+                position: absolute;
+                bottom: 20px;
+                left: 10vw;
+            }
+        </style>
+    </head>
+
+    <body>
+        <iframe src="https://order.kfc.com.cn/preorder-taro/home" frameborder="0"></iframe>
+        <img id="img1" src="" alt="">
+    </body>
+    <script>
+        const img1 = document.getElementById('img1')
+        console.log(img1);
+        console.log(img1.src);
+        setTimeout(() => {
+            img1.src = './WechatIMG1.jpeg'
+        }, 2000);
+    </script>
+</html>
