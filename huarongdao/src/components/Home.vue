@@ -35,7 +35,7 @@
       <div @touchstart="backToChooseDifficult">选择难度</div>
     </div>
 
-    <div class="setting" v-if="isEdit === 'setting'">
+    <div class="setting" v-if="isEdit === 'customSetting'">
       <div @touchstart="redoClick">回退</div>
       <div @touchstart="confirmClick(false)">开始游戏</div>
       <div @touchstart="backToChooseSettingModel">选择模式</div>
@@ -96,13 +96,14 @@ export default {
       this.randomSettingDone = true;
     },
     customSetting() {
-      this.isEdit = 'setting';
+      this.isEdit = 'customSetting';
       this.settingDifficult();
     },
     settingDifficult() {
       this.boxTextMap = JSON.parse(JSON.stringify(new Array(this.difficulty).fill(
         new Array(this.difficulty).fill(null)
       )));
+      this.doneList = [];
 
       if (this.difficulty === 0) {
         return;
@@ -127,7 +128,7 @@ export default {
       this.settingDifficult();
     },
     boxClick(rowKey, colKey) {
-      if (this.isEdit === 'setting') {
+      if (this.isEdit === 'customSetting') {
         this.boxEditClick(rowKey, colKey);
       } else if (this.isEdit === 'playing') {
         this.boxPlayClick(rowKey, colKey);
