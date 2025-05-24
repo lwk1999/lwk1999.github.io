@@ -8,7 +8,7 @@
           v-for="(col, colKey) in row"
           class="box"
           :class="{ 'bg-pink': boxTextMap[rowKey][colKey] }"
-          @click="boxClick(rowKey, colKey)"
+          @touchstart="boxClick(rowKey, colKey)"
           :key="colKey">
           <span>{{ boxTextMap[rowKey][colKey] }}</span>
         </div>
@@ -16,36 +16,36 @@
     </div>
 
     <div class="setting" v-if="isEdit === 'chooseDifficultity'">
-      <div @click="chooseDifficultity(3)">3</div>
-      <div @click="chooseDifficultity(4)">4</div>
-      <div @click="chooseDifficultity(5)">5</div>
-      <div @click="chooseDifficultity(6)">6</div>
-      <div @click="chooseDifficultity(7)">7</div>
-      <div @click="chooseDifficultity(8)">8</div>
-      <div @click="chooseDifficultity(9)">9</div>
-      <div @click="chooseDifficultity(10)">10</div>
-      <div @click="chooseDifficultity(11)">11</div>
+      <div @touchstart="chooseDifficultity(3)">3</div>
+      <div @touchstart="chooseDifficultity(4)">4</div>
+      <div @touchstart="chooseDifficultity(5)">5</div>
+      <div @touchstart="chooseDifficultity(6)">6</div>
+      <div @touchstart="chooseDifficultity(7)">7</div>
+      <div @touchstart="chooseDifficultity(8)">8</div>
+      <div @touchstart="chooseDifficultity(9)">9</div>
+      <div @touchstart="chooseDifficultity(10)">10</div>
+      <div @touchstart="chooseDifficultity(11)">11</div>
     </div>
 
 
     <div class="setting" v-if="isEdit === 'settingModel'">
-      <div @click="randomSetting">随机分配</div>
-      <div v-if="randomSettingDone" style="display: inline-block;" @click="confirmClick(true)">开始游戏</div>
-      <div @click="customSetting">自定义</div>
-      <div @click="backToChooseDifficult">选择难度</div>
+      <div @touchstart="randomSetting">随机分配</div>
+      <div v-if="randomSettingDone" style="display: inline-block;" @touchstart="confirmClick(true)">开始游戏</div>
+      <div @touchstart="customSetting">自定义</div>
+      <div @touchstart="backToChooseDifficult">选择难度</div>
     </div>
 
     <div class="setting" v-if="isEdit === 'setting'">
-      <div @click="redoClick">回退</div>
-      <div @click="confirmClick(false)">开始游戏</div>
-      <div @click="backToChooseSettingModel">选择模式</div>
+      <div @touchstart="redoClick">回退</div>
+      <div @touchstart="confirmClick(false)">开始游戏</div>
+      <div @touchstart="backToChooseSettingModel">选择模式</div>
     </div>
 
     <div class="setting" v-if="isEdit === 'playing'">
       <div class="timer">
         {{ time / 100 }} s
       </div>
-      <div @click="endGame(true)">结束游戏</div>
+      <div @touchstart="endGame(true)">结束游戏</div>
     </div>
 
   </div>
