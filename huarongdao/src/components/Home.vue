@@ -129,7 +129,7 @@ export default {
     boxClick(rowKey, colKey) {
       if (this.isEdit === 'setting') {
         this.boxEditClick(rowKey, colKey);
-      } else {
+      } else if (this.isEdit === 'playing') {
         this.boxPlayClick(rowKey, colKey);
       }
     },
